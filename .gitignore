@@ -1,0 +1,11 @@
+tags
+test.sh
+.luarc.json
+nvim
+
+spell/
+
+# Track the lockfile so a new PC gets the same plugin versions.
+# nvim-pack-lock.json
+
+.DS_Store
