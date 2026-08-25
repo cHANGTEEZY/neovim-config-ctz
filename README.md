@@ -1,5 +1,9 @@
 <p align="center">
-  <img src="https://raw.githubusercontent.com/neovim/neovim.github.io/master/logos/neovim-mark.svg" alt="Neovim" width="120" />
+  <img src="./assets/neovim-mark.png" alt="Neovim" width="140" />
+</p>
+
+<p align="center">
+  <img src="./assets/neovim-logo.png" alt="Neovim" width="280" />
 </p>
 
 <h1 align="center">Sushank's Neovim</h1>
