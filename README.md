@@ -3,13 +3,7 @@
 </p>
 
 <p align="center">
-  <img src="./assets/neovim-logo.png" alt="Neovim" width="280" />
-</p>
-
-<h1 align="center">Sushank's Neovim</h1>
-
-<p align="center">
-  My daily driver — Kickstart-based, TypeScript-ready, and a little VS Code muscle memory on purpose.
+  My daily driver Kickstart-based, TypeScript-ready, and a little VS Code muscle memory on purpose.
 </p>
 
 <p align="center">
@@ -31,20 +25,20 @@ Copy the folder to a new machine, run one script, and you're in.
 
 ## Why this exists
 
-I wanted a setup that feels like a real editor on day one: file tree, fuzzy find, LSP, format-on-save, multi-cursor. Kickstart gave me a config I can still read top to bottom. I added the TypeScript bits, VS Code-ish bindings (`Ctrl-p`, `Ctrl-b`, `Ctrl-s`, `Ctrl-n`), and a one-shot installer so a fresh Mac or Linux box is ready in minutes.
+I wanted a setup that feels like a real editor on day one: file tree, fuzzy find, LSP, format on save, multi-cursor. Kickstart gave me a config I can still read top to bottom. I added the TypeScript bits, VS Code-ish bindings (`Ctrl-p`, `Ctrl-b`, `Ctrl-s`, `Ctrl-n`), and a one-shot installer so a fresh Mac or Linux box is ready in minutes.
 
 **Tokyonight Night**, JetBrains Mono Nerd Font, Neovim **0.12+** (`vim.pack` for plugins).
 
 ## What you get
 
-| | |
-| --- | --- |
-| **Explorer** | File tree with `Ctrl-b` ([neo-tree](https://github.com/nvim-neo-tree/neo-tree.nvim)) |
-| **Search** | Fuzzy files with `Ctrl-p`, live grep with `<Space>sg` ([Telescope](https://github.com/nvim-telescope/telescope.nvim)) |
-| **TypeScript** | `ts_ls` + ESLint LSP, Prettier on save, JSX auto-close tags |
-| **Editing** | Multi-cursor (`<Space>a`, `Ctrl-n`), Shift+arrows to select, autopairs |
-| **Git** | Hunks in the gutter, statusline, buffer tabs |
-| **Complete** | blink.cmp + LuaSnip, which-key when you hesitate |
+|                |                                                                                                                       |
+| -------------- | --------------------------------------------------------------------------------------------------------------------- |
+| **Explorer**   | File tree with `Ctrl-b` ([neo-tree](https://github.com/nvim-neo-tree/neo-tree.nvim))                                  |
+| **Search**     | Fuzzy files with `Ctrl-p`, live grep with `<Space>sg` ([Telescope](https://github.com/nvim-telescope/telescope.nvim)) |
+| **TypeScript** | `ts_ls` + ESLint LSP, Prettier on save, JSX auto-close tags                                                           |
+| **Editing**    | Multi-cursor (`<Space>a`, `Ctrl-n`), Shift+arrows to select, autopairs                                                |
+| **Git**        | Hunks in the gutter, statusline, buffer tabs                                                                          |
+| **Complete**   | blink.cmp + LuaSnip, which-key when you hesitate                                                                      |
 
 Language servers and formatters land through [Mason](https://github.com/mason-org/mason.nvim): TypeScript, ESLint, JSON, HTML, CSS, Lua, Prettier.
 
@@ -87,13 +81,13 @@ Works on **macOS** (Homebrew) and **Linux** (apt, dnf, or pacman).
 
 ### Everyday keys
 
-| Keys | What it does |
-| --- | --- |
-| `Ctrl-s` | Save |
-| `Ctrl-p` | Find files |
-| `Ctrl-b` | Toggle file tree |
-| `<Space>sg` | Search text in the project |
-| `gd` | Go to definition |
+| Keys                  | What it does                    |
+| --------------------- | ------------------------------- |
+| `Ctrl-s`              | Save                            |
+| `Ctrl-p`              | Find files                      |
+| `Ctrl-b`              | Toggle file tree                |
+| `<Space>sg`           | Search text in the project      |
+| `gd`                  | Go to definition                |
 | `<Space>a` / `Ctrl-n` | Multi-cursor (all / next match) |
 
 ## License
