@@ -166,8 +166,8 @@ do
   -- Minimal number of screen lines to keep above and below the cursor.
   vim.o.scrolloff = 10
 
-  -- Jump to .ts/.tsx/.js files with `gf` on import-like paths
-  vim.opt.suffixesadd:append { '.ts', '.tsx', '.js', '.jsx', '.json', '.mjs', '.cjs' }
+  -- Jump to .ts/.tsx/.js/.go files with `gf` on import-like paths
+  vim.opt.suffixesadd:append { '.ts', '.tsx', '.js', '.jsx', '.json', '.mjs', '.cjs', '.go' }
 
   -- Round borders on floating windows (hover, signature, etc.)
   vim.o.winborder = 'rounded'
@@ -417,6 +417,7 @@ do
       { '<leader>t', group = '[T]oggle' },
       { '<leader>b', group = '[B]uffer' },
       { '<leader>h', group = 'Git [H]unk', mode = { 'n', 'v' } }, -- Enable gitsigns recommended keymaps first
+      { '<leader>g', group = '[G]o' },
       { 'gr', group = 'LSP Actions', mode = { 'n' } },
     },
   }
@@ -546,7 +547,7 @@ do
   -- See `:help telescope` and `:help telescope.setup()`
   require('telescope').setup {
     defaults = {
-      file_ignore_patterns = { 'node_modules', '%.git/', 'dist/', 'build/', '.next/', 'coverage/' },
+      file_ignore_patterns = { 'node_modules', '%.git/', 'dist/', 'build/', '.next/', 'coverage/', 'vendor/' },
       mappings = {
         i = {
           ['<C-j>'] = 'move_selection_next',
@@ -712,7 +713,7 @@ do
       -- Hover docs (also mapped to K by Neovim)
       map('K', vim.lsp.buf.hover, 'Hover Documentation')
 
-      -- Organize TypeScript imports
+      -- Organize imports (TypeScript via ts_ls, Go via gopls)
       map('<leader>oi', function()
         vim.lsp.buf.code_action {
           context = { only = { 'source.organizeImports' }, diagnostics = {} },
@@ -769,10 +770,44 @@ do
   ---@type table<string, vim.lsp.Config>
   local servers = {
     -- clangd = {},
-    -- gopls = {},
     -- pyright = {},
     -- rust_analyzer = {},
     --
+    -- Go
+    gopls = {
+      settings = {
+        gopls = {
+          gofumpt = true,
+          usePlaceholders = true,
+          completeUnimported = true,
+          staticcheck = true,
+          analyses = {
+            nilness = true,
+            unusedparams = true,
+            unusedwrite = true,
+            useany = true,
+          },
+          hints = {
+            assignVariableTypes = true,
+            compositeLiteralFields = true,
+            compositeLiteralTypes = true,
+            constantValues = true,
+            functionTypeParameters = true,
+            parameterNames = true,
+            rangeVariableTypes = true,
+          },
+          codelenses = {
+            gc_details = false,
+            generate = true,
+            test = true,
+            tidy = true,
+            upgrade_dependency = true,
+            vendor = true,
+          },
+        },
+      },
+    },
+
     -- TypeScript / JavaScript
     ts_ls = {
       settings = {
@@ -875,6 +910,9 @@ do
   local ensure_installed = vim.tbl_keys(servers or {})
   vim.list_extend(ensure_installed, {
     'prettierd',
+    'gofumpt',
+    'goimports',
+    'golangci-lint',
   })
 
   require('mason-tool-installer').setup { ensure_installed = ensure_installed }
@@ -902,6 +940,8 @@ do
 
       local enabled_filetypes = {
         lua = true,
+        go = true,
+        gomod = true,
         javascript = true,
         javascriptreact = true,
         typescript = true,
@@ -925,6 +965,7 @@ do
     -- You can also specify external formatters in here.
     formatters_by_ft = {
       lua = { 'stylua' },
+      go = { 'goimports', 'gofumpt' },
       javascript = { 'prettierd', 'prettier', stop_after_first = true },
       javascriptreact = { 'prettierd', 'prettier', stop_after_first = true },
       typescript = { 'prettierd', 'prettier', stop_after_first = true },
@@ -1038,7 +1079,7 @@ do
   vim.pack.add { { src = gh 'nvim-treesitter/nvim-treesitter', version = 'main' } }
 
   -- Ensure basic parsers are installed
-  local parsers = { 'bash', 'c', 'diff', 'html', 'lua', 'luadoc', 'markdown', 'markdown_inline', 'query', 'vim', 'vimdoc', 'javascript', 'typescript', 'tsx', 'json', 'css', 'regex' }
+  local parsers = { 'bash', 'c', 'diff', 'html', 'lua', 'luadoc', 'markdown', 'markdown_inline', 'query', 'vim', 'vimdoc', 'javascript', 'typescript', 'tsx', 'json', 'css', 'regex', 'go', 'gomod', 'gosum', 'gowork' }
   require('nvim-treesitter').install(parsers)
 
   ---@param buf integer

@@ -48,14 +48,14 @@ install_deps() {
     Darwin)
       ensure_homebrew
       info "Installing macOS packages..."
-      brew install neovim git ripgrep fd node unzip cmake
+      brew install neovim git ripgrep fd node unzip cmake go
       brew install --cask font-jetbrains-mono-nerd-font 2>/dev/null || true
       ;;
     Linux)
       if have apt-get; then
         info "Installing Debian/Ubuntu packages..."
         sudo apt-get update
-        sudo apt-get install -y git curl unzip tar make gcc ripgrep fd-find xclip nodejs npm
+        sudo apt-get install -y git curl unzip tar make gcc ripgrep fd-find xclip nodejs npm golang-go
         if have fdfind && ! have fd; then
           mkdir -p "$HOME/.local/bin"
           ln -sfn "$(command -v fdfind)" "$HOME/.local/bin/fd"
@@ -63,12 +63,12 @@ install_deps() {
         fi
       elif have dnf; then
         info "Installing Fedora packages..."
-        sudo dnf install -y git curl unzip tar make gcc ripgrep fd-find xclip nodejs npm neovim || true
+        sudo dnf install -y git curl unzip tar make gcc ripgrep fd-find xclip nodejs npm neovim golang || true
       elif have pacman; then
         info "Installing Arch packages..."
-        sudo pacman -Sy --noconfirm git curl unzip tar make gcc ripgrep fd xclip nodejs npm neovim || true
+        sudo pacman -Sy --noconfirm git curl unzip tar make gcc ripgrep fd xclip nodejs npm neovim go || true
       else
-        warn "Unknown Linux distro. Install git, curl, unzip, make, gcc, ripgrep, fd, and node yourself."
+        warn "Unknown Linux distro. Install git, curl, unzip, make, gcc, ripgrep, fd, node, and go yourself."
       fi
       ;;
     *)

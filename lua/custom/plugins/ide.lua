@@ -1,4 +1,4 @@
--- Extra IDE pieces for TypeScript: auto-close JSX tags, new file/folder helpers.
+-- Extra IDE pieces: auto-close JSX tags, new file/folder helpers.
 
 vim.pack.add { 'https://github.com/windwp/nvim-ts-autotag' }
 require('nvim-ts-autotag').setup {

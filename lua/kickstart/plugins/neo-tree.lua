@@ -74,7 +74,7 @@ require('neo-tree').setup {
       visible = false,
       hide_dotfiles = false,
       hide_gitignored = true,
-      hide_by_name = { 'node_modules', '.git', 'dist', 'build', '.next', 'coverage' },
+      hide_by_name = { 'node_modules', '.git', 'dist', 'build', '.next', 'coverage', 'vendor' },
     },
     window = {
       mappings = {

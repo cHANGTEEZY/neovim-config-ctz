@@ -66,7 +66,7 @@ Inside the tree:
 
 In Telescope prompts: `<C-j>` / `<C-k>` move the selection.
 
-## LSP / TypeScript
+## LSP / TypeScript / Go
 
 | Keys | Mode | Action |
 | --- | --- | --- |
@@ -78,7 +78,7 @@ In Telescope prompts: `<C-j>` / `<C-k>` move the selection.
 | `K` | n | Hover docs |
 | `grn` / `<Space>rn` | n | Rename |
 | `gra` / `<Space>ca` | n x | Code action |
-| `<Space>oi` | n | Organize TypeScript imports |
+| `<Space>oi` | n | Organize imports (TypeScript / Go) |
 | `<Space>f` | n v | Format buffer |
 | `<Space>q` | n | Diagnostics quickfix list |
 | `[d` / `]d` | n | Previous / next diagnostic (built-in) |
@@ -87,6 +87,15 @@ In Telescope prompts: `<C-j>` / `<C-k>` move the selection.
 | `<Space>th` | n | Toggle inlay hints |
 | Ctrl-click / Cmd-click | n | Go to definition |
 | Mouse back / forward | n | Jump back / forward |
+
+## Go
+
+| Keys | Mode | Action |
+| --- | --- | --- |
+| `<Space>ga` | n | Switch between `foo.go` and `foo_test.go` |
+| `<Space>gt` | n | `go test` the current package |
+| `<Space>gT` | n | `go test` the nearest Test/Benchmark |
+| `<Space>gr` | n | `go run` the current package |
 
 ## Windows and terminal
 

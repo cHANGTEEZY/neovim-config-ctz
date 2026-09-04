@@ -1,11 +1,11 @@
--- Extra linting (TypeScript / JavaScript ESLint is handled by the eslint LSP)
+-- Extra linting. TypeScript / JavaScript ESLint is handled by the eslint LSP.
 
 vim.pack.add { 'https://github.com/mfussenegger/nvim-lint' }
 
 local lint = require 'lint'
 lint.linters_by_ft = {
-  -- Keep empty unless you install extra linters via Mason.
   -- TS/JS diagnostics come from ts_ls + eslint language servers.
+  go = { 'golangcilint' },
 }
 
 local lint_augroup = vim.api.nvim_create_augroup('lint', { clear = true })
