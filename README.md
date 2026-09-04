@@ -2,7 +2,7 @@
 
 ![Neovim](./assets/neovim-logo.png)
 
-# cHANGTEEZY's Neovim
+# cHANGTEEZY's config
 
 My daily driver — Kickstart-based, TypeScript and Go ready, and a little VS Code muscle memory on purpose.
 
