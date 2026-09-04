@@ -1,10 +1,8 @@
 <div align="center">
 
-![Neovim](./assets/neovim-mark.png)
-
 ![Neovim](./assets/neovim-logo.png)
 
-# Sushank's Neovim
+# cHANGTEEZY's Neovim
 
 My daily driver — Kickstart-based, TypeScript and Go ready, and a little VS Code muscle memory on purpose.
 
