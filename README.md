@@ -4,7 +4,7 @@
 
 # cHANGTEEZY's config
 
-My daily driver — Kickstart-based, TypeScript and Go ready, and a little VS Code muscle memory on purpose.
+My daily driver  Kickstart-based, TypeScript and Go ready, and a little VS Code muscle memory on purpose.
 
 [![Neovim 0.12+](https://img.shields.io/badge/Neovim-0.12+-57A143?style=for-the-badge&logo=neovim&logoColor=white)](https://neovim.io)
 [![Lua](https://img.shields.io/badge/Lua-2C2D72?style=for-the-badge&logo=lua&logoColor=white)](https://www.lua.org)
@@ -18,7 +18,7 @@ My daily driver — Kickstart-based, TypeScript and Go ready, and a little VS Co
 
 ---
 
-Hey, I'm **Sushank** ([cHANGTEEZY](https://github.com/cHANGTEEZY)). This is the Neovim config I actually use — forked from [kickstart.nvim](https://github.com/nvim-lua/kickstart.nvim), then bent toward TypeScript / React and Go work without giving up the keys I already had in my fingers.
+Hey, I'm **Sushank** ([cHANGTEEZY](https://github.com/cHANGTEEZY)). This is the Neovim config I actually use forked from [kickstart.nvim](https://github.com/nvim-lua/kickstart.nvim), then bent toward TypeScript / React and Go work without giving up the keys I already had in my fingers.
 
 Copy the folder to a new machine, run one script, and you're in.
 
